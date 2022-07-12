@@ -1,0 +1,14 @@
+{
+  "name": "isitsafe",
+  "version": "1.0.0",
+  "description": "App to help kids with allergies figure out what food they can eat safely.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ElektrazCode",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
