@@ -8,23 +8,28 @@
     <title>isitSafe</title>
 </head>
 <body>
-    <h1>Is it safe?</h1>
+    <header>
+        <h1>Is it safe?</h1>
+    </header>
     <main>
-        <section class="allergy">
+        <section class="allergy dialogue">
             <h2>Avoid</h2>
             <ul class="allergies">
                 <% for(var i=0; i<allergies.length; i++) {%>
                     <li class="allergyItem">
-                        <span><%= allergies[i].allergy %></span><img src="/images/edit.png"><img src="/images/remove.png">
+                        <span><%= allergies[i].allergy %></span>
+                        <div><img src="/images/edit.png"><img src="/images/remove.png"></div>
                     </li>
                 <% } %>
             </ul>
             <form action="/allergies" method="POST">
-                <input type="text" placeholder="Allergic Food" name="allergy">
-                <button type="submit">Add</button>
+                <div>
+                    <input type="text" placeholder="Allergic Food" name="allergy">
+                    <button type="submit">Add</button>
+                </div>
             </form>
         </section>
-        <section class="safe">
+        <section class="safe dialogue">
             <h2>Safe</h2>
             <form action="/safeFood" method="POST">  
                 <input type="text" placeholder="Safe Food" name="safe">

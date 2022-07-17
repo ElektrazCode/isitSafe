@@ -17,6 +17,14 @@ MongoClient.connect(connectionString, {useUnifiedtopology: true})
         app.use(bodyParser.urlencoded({extended:true}));
         app.use(express.static('public'));
 
+        // app.get('/', (req, res) => {
+        //     db.collection('safeFood').find().toArray()
+        //         .then(results => {
+        //             res.render('index.ejs', {safeFood: results});
+        //         })
+        //         .catch(error => console.error(error))
+        // });
+
         app.get('/', (req, res) => {
             db.collection('allergies').find().toArray()
                 .then(results => {
@@ -24,6 +32,7 @@ MongoClient.connect(connectionString, {useUnifiedtopology: true})
                 })
                 .catch(error => console.error(error))
         });
+        
         app.post('/allergies', (req, res) => {
             allergiesCollection.insertOne(req.body)
                 .then(result => {
@@ -31,9 +40,13 @@ MongoClient.connect(connectionString, {useUnifiedtopology: true})
                 })
                 .catch(error => console.error(error))
         });
-        // app.post('/safeFood', (req, res) => {
-        //     console.log(req.body);
-        // });
+        app.post('/safeFood', (req, res) => {
+            safeFoodCollection.insertOne(req.body)
+                .then(result => {
+                    res.redirect('/');
+                })
+                .catch(error => console.error(error))
+        });
 
         app.listen(3000,() => console.log('listening to 3000'));
 

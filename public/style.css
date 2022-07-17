@@ -1,26 +1,77 @@
+@font-face {
+    font-family: "Comica BD Bold";
+    src: url("/images/Comica BD Bold.ttf");
+}
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: url("/images/Colorsbg.jpg") center no-repeat;
+    background-size: cover;
+    font-family: "Comica BD Bold";
+}
+header{
+    height: 25%;
+    padding: 2em 0;
+}
+h2{
+    font-size: 2.5em;
 }
 h1, h2{
     text-align: center;
+    color: #FFE421;
+}
+h1{
+    font-size: 6em;
+    color: black;
 }
 main{
+    height: 75%;
+    padding-top: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;    
+    align-items: flex-start;    
+}
+section{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 img{
     width: 1em;
     margin: 0 0.5em;
 }
-.safe{
-    background: springGreen;
+ul{
+    width: 100%;
+}
+input, button{
+    height: 2em;
+    padding: 0.3em;
+}
+li{
+    font-size: 1.2em;
+    padding: 0.2em;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.dialogue{
+    width: 25%;
     padding: 1em;
-    border-radius: 10px;
+    border: 10px solid white;  
+}
+.safe{
+    background: #1A9AE3;
+    box-shadow: 6px 6px 0 0 rgba(0,0,0,0.6);
 }
 .allergy{
-    background: red;
-    padding: 1em;
-    border-radius:10px;
+    background: #F7104C;
+    box-shadow: -6px 6px 0 0 rgba(0,0,0,0.6);
 }
