@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+h1, h2{
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;    
+}
+.safe{
+    background: springGreen;
+    padding: 1em;
+}
+.allergy{
+    background: red;
+    padding: 1em;
+}

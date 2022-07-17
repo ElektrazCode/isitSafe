@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>isitSafe</title>
+</head>
+<body>
+    <h1>Is It Safe?</h1>
+    <main>
+        <form action="/allergies" method="POST" class="allergy">
+            <h2>Food to Avoid</h2>
+            <input type="text" placeholder="Allergic Food" name="allergy">
+            <button type="submit">Add</button>
+        </form>
+        <form action="/safeFood" method="POST" class="safe">
+            <h2>Safe Food</h2>
+            <input type="text" placeholder="Safe Food" name="safe">
+            <button type="submit">Add</button>
+        </form>
+    </main>
+</body>
+</html>

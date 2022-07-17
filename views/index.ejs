@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>isitSafe</title>
+</head>
+<body>
+    <h1>Is it safe?</h1>
+    <main>
+        <section class="allergy">
+            <h2>Food to Avoid</h2>
+            <ul class="allergies">
+                <% for(var i=0; i<allergies.length; i++) {%>
+                    <li class="allergyItem">
+                        <span><%= allergies[i].allergy %></span>
+                    </li>
+                <% } %>
+            </ul>
+            <form action="/allergies" method="POST">
+                <input type="text" placeholder="Allergic Food" name="allergy">
+                <button type="submit">Add</button>
+            </form>
+        </section>
+        <section class="safe">
+            <form action="/safeFood" method="POST">
+                <h2>Safe Food</h2>
+                <input type="text" placeholder="Safe Food" name="safe">
+                <button type="submit">Add</button>
+            </form>
+        </section>
+    </main>
+    <script src="/main.js"></script>
+</body>
+</html>
