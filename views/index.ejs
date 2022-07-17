@@ -11,11 +11,11 @@
     <h1>Is it safe?</h1>
     <main>
         <section class="allergy">
-            <h2>Food to Avoid</h2>
+            <h2>Avoid</h2>
             <ul class="allergies">
                 <% for(var i=0; i<allergies.length; i++) {%>
                     <li class="allergyItem">
-                        <span><%= allergies[i].allergy %></span>
+                        <span><%= allergies[i].allergy %></span><img src="/images/edit.png"><img src="/images/remove.png">
                     </li>
                 <% } %>
             </ul>
@@ -25,8 +25,8 @@
             </form>
         </section>
         <section class="safe">
-            <form action="/safeFood" method="POST">
-                <h2>Safe Food</h2>
+            <h2>Safe</h2>
+            <form action="/safeFood" method="POST">  
                 <input type="text" placeholder="Safe Food" name="safe">
                 <button type="submit">Add</button>
             </form>

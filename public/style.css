@@ -10,11 +10,17 @@ main{
     justify-content: space-around;
     align-items: center;    
 }
+img{
+    width: 1em;
+    margin: 0 0.5em;
+}
 .safe{
     background: springGreen;
     padding: 1em;
+    border-radius: 10px;
 }
 .allergy{
     background: red;
     padding: 1em;
+    border-radius:10px;
 }

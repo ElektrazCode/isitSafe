@@ -11,7 +11,7 @@ MongoClient.connect(connectionString, {useUnifiedtopology: true})
         const db = client.db('IsItSafeDB');
         const allergiesCollection = db.collection('allergies');
         const safeFoodCollection = db.collection('safeFood');
-        
+
         app.set('view engine', 'ejs');
 
         app.use(bodyParser.urlencoded({extended:true}));
