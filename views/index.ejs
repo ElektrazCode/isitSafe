@@ -18,21 +18,43 @@
                 <% for(var i=0; i<allergies.length; i++) {%>
                     <li class="allergyItem">
                         <span><%= allergies[i].allergy %></span>
-                        <div><img src="/images/edit.png"><img src="/images/remove.png"></div>
+                        <div>
+                            <button class="editAllergyBtn">
+                                <img src="/images/edit.png">
+                            </button>
+                            <button class="deleteAllergyBtn">
+                                <img src="/images/remove.png">
+                            </button>
+                        </div>
                     </li>
                 <% } %>
             </ul>
             <form action="/allergies" method="POST">
                 <div>
-                    <input type="text" placeholder="Allergic Food" name="allergy">
+                    <input type="text" placeholder="Allergic Food" name="allergy" class="allergyValue">
                     <button type="submit">Add</button>
                 </div>
             </form>
         </section>
         <section class="safe dialogue">
             <h2>Safe</h2>
+            <ul class="safeFood">
+                <% for(var i=0; i<safeFood.length; i++) {%>
+                    <li class="safeItem">
+                        <span><%= safeFood[i].safe %></span>
+                        <div>
+                            <button class="editSafeBtn">
+                                <img src="/images/edit.png">
+                            </button>
+                            <button class="deleteSafeBtn">
+                                <img src="/images/remove.png">
+                            </button>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
             <form action="/safeFood" method="POST">  
-                <input type="text" placeholder="Safe Food" name="safe">
+                <input type="text" placeholder="Safe Food" name="safe" class="safeValue">
                 <button type="submit">Add</button>
             </form>
         </section>

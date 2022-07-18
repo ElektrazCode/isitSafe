@@ -17,23 +17,22 @@ MongoClient.connect(connectionString, {useUnifiedtopology: true})
         app.use(bodyParser.urlencoded({extended:true}));
         app.use(express.static('public'));
 
-        // app.get('/', (req, res) => {
-        //     db.collection('safeFood').find().toArray()
-        //         .then(results => {
-        //             res.render('index.ejs', {safeFood: results});
-        //         })
-        //         .catch(error => console.error(error))
-        // });
-
         app.get('/', (req, res) => {
+            let results1, results2; 
             db.collection('allergies').find().toArray()
                 .then(results => {
-                    res.render('index.ejs', {allergies: results});
+                    results1 = results;
                 })
-                .catch(error => console.error(error))
+            db.collection('safeFood').find().toArray()
+                .then(results => {
+                    results2 = results;
+                    res.render('index.ejs', {allergies: results1, safeFood: results2});   
+                })          
+                .catch(error => console.error(error))     
         });
         
         app.post('/allergies', (req, res) => {
+            console.log(req.body);
             allergiesCollection.insertOne(req.body)
                 .then(result => {
                     res.redirect('/');
@@ -41,13 +40,30 @@ MongoClient.connect(connectionString, {useUnifiedtopology: true})
                 .catch(error => console.error(error))
         });
         app.post('/safeFood', (req, res) => {
+            console.log(req.body);
             safeFoodCollection.insertOne(req.body)
                 .then(result => {
                     res.redirect('/');
                 })
                 .catch(error => console.error(error))
         });
-
+        app.put('/allergies', (req, res) => {
+            allergiesCollection.findOneAndUpdate(
+                {
+                    allergy: req.body.allergy
+                },
+                {
+                    $set: {
+                        allergy: req.body.value
+                    }
+                }
+            )
+                .then(result => {
+                    console.log(result);
+                    res.redirect('/');
+                })
+                .catch(error => console.error(error))
+        });
         app.listen(3000,() => console.log('listening to 3000'));
 
     })

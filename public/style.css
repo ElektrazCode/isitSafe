@@ -38,7 +38,7 @@ main{
     align-items: flex-start;    
 }
 section{
-    height: 60%;
+    min-height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -46,10 +46,10 @@ section{
 }
 img{
     width: 1em;
-    margin: 0 0.5em;
 }
 ul{
     width: 100%;
+    padding: 1em 0;
 }
 input, button{
     height: 2em;
@@ -61,6 +61,7 @@ li{
     display: flex;
     justify-content: space-between;
     color: white;
+    align-items: flex-end;
 }
 .dialogue{
     width: 25%;
